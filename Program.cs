@@ -28,9 +28,7 @@ namespace _3_1_01
             Console.WriteLine($"sum = {sum}");
 
             // Первый отрицательный элемент:
-            int first = 0;
-            int last = 0;
-            double summ = 0;            
+            int first = 0;            
             for (int i = 0; i < nums.Length; i++)            
                 if (nums[i] < 0)
                 {
@@ -40,12 +38,14 @@ namespace _3_1_01
             Console.WriteLine($"first = {first}");
 
             // Последний отрицательный элемент:
+            int last = 0;
             for (int i = first; i < nums.Length; i++)            
                 if (nums[i] < 0)                
                     last = i;                
             Console.WriteLine($"last = {last}");
 
             // Сумма элементов между отрицательными элементами:
+            double summ = 0;
             for (int i = first + 1; i < last; i++)
                 summ += nums[i];                
             Console.WriteLine($"summ = {summ}");
