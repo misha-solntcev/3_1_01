@@ -16,6 +16,16 @@ namespace _3_1_01
     {
         static void Main(string[] args)
         {
+            double[] nums = new double[] { 1, 2, -3, 4, 5, 6 ,-7, 8, 9 };
+            double sum = 0;
+
+            for (int i = 0; i < nums.Length; i++)
+            {
+                if (i % 2 != 0)
+                    sum += nums[i];
+            }
+            Console.WriteLine(sum);
+            Console.ReadLine();
         }
     }
 }
