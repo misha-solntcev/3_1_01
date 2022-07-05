@@ -24,7 +24,38 @@ namespace _3_1_01
                 if (i % 2 != 0)
                     sum += nums[i];
             }
-            Console.WriteLine(sum);
+                // Сумма элементов с нечетными номерами:
+            Console.WriteLine($"sum = {sum}"); 
+            
+            int first = 0;
+            int last = 0;
+            double summ = 0;
+
+            for (int i = 0; i < nums.Length; i++)
+            {
+                if (nums[i] < 0)
+                {
+                    first = i;
+                    break;
+                }
+            }
+                // Первый отрицательный элемент:
+            Console.WriteLine($"first = {first}");
+
+            for (int i = first; i < nums.Length; i++)
+            {
+                if (nums[i] < 0)
+                {
+                    last = i;                    
+                }
+            }
+                // Последний отрицательный элемент:
+            Console.WriteLine($"last = {last}");
+
+            for (int i = first + 1; i < last; i++)
+                summ += nums[i];
+                // Сумма элементов между отрицательными элементами:
+            Console.WriteLine($"summ = {summ}");
             Console.ReadLine();
         }
     }
