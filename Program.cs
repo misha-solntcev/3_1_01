@@ -17,44 +17,37 @@ namespace _3_1_01
         static void Main(string[] args)
         {
             double[] nums = new double[] { 1, 2, -3, 4, 5, 6 ,-7, 8, 9 };
-            double sum = 0;
 
+            // Сумма элементов с нечетными номерами:
+            double sum = 0;
             for (int i = 0; i < nums.Length; i++)
             {
                 if (i % 2 != 0)
                     sum += nums[i];
-            }
-                // Сумма элементов с нечетными номерами:
-            Console.WriteLine($"sum = {sum}"); 
-            
+            }                
+            Console.WriteLine($"sum = {sum}");
+
+            // Первый отрицательный элемент:
             int first = 0;
             int last = 0;
-            double summ = 0;
-
-            for (int i = 0; i < nums.Length; i++)
-            {
+            double summ = 0;            
+            for (int i = 0; i < nums.Length; i++)            
                 if (nums[i] < 0)
                 {
                     first = i;
                     break;
-                }
-            }
-                // Первый отрицательный элемент:
+                }                
             Console.WriteLine($"first = {first}");
 
-            for (int i = first; i < nums.Length; i++)
-            {
-                if (nums[i] < 0)
-                {
-                    last = i;                    
-                }
-            }
-                // Последний отрицательный элемент:
+            // Последний отрицательный элемент:
+            for (int i = first; i < nums.Length; i++)            
+                if (nums[i] < 0)                
+                    last = i;                
             Console.WriteLine($"last = {last}");
 
+            // Сумма элементов между отрицательными элементами:
             for (int i = first + 1; i < last; i++)
-                summ += nums[i];
-                // Сумма элементов между отрицательными элементами:
+                summ += nums[i];                
             Console.WriteLine($"summ = {summ}");
             Console.ReadLine();
         }
